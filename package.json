@@ -1,10 +1,10 @@
 {
-  "name": "booksy-react",
+  "name": "googlebooks-app",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "serve -s build",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cd server && npm start",
     "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
@@ -18,10 +18,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "if-env": "^1.0.4",
-    "serve": "^11.3.2"
+    "if-env": "^1.0.4"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0"
+    "concurrently": "^5.2.0"
   }
 }
